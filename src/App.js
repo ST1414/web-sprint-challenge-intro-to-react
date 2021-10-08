@@ -31,7 +31,7 @@ const StyleChar = styled.div`
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [characters, setCharacters] = useState([null]);
+  const [characters, setCharacters] = useState([]);
   const [charId, setCharId] = useState([null]);
 
   function openDetails (id) {
@@ -65,11 +65,14 @@ const App = () => {
         characters.map(char => {
           return (
             <div className='characterList'>
-              <h3>{char.name}}</h3>
+              <h3>{char.name}</h3>
               <button onClick={ () => openDetails(char.id)}>Use the Force</button>
             </div>
           )
         })
+      }
+      { 
+        charId && <Character charId={charId} closeDetails={closeDetails} />
       }
 
     </div>
@@ -77,18 +80,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// { 
-//   characters.map( char => {
-//     return (
-//       <div className='characterList'>
-//         <h3>{char.name}</h3>
-//         <button onClick={ () => openDetails(char.id)}>Use the Force</button>
-//       </div>
-//     )
-//   })
-// }
-// {/* { 
-//   charId && <Character charId={charId} closeDetails={closeDetails} />
-// } */}
