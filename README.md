@@ -36,9 +36,9 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 Your finished project must include all of the following requirements:
 
-- [ ] Use the endpoint `[GET] https://swapi.dev/api/people` (mocked in [msw](https://github.com/mswjs/msw)) to obtain characters.
-- [ ] Set the list of characters into state.
-- [ ] Render your characters to the DOM:
+- [x] Use the endpoint `[GET] https://swapi.dev/api/people` (mocked in [msw](https://github.com/mswjs/msw)) to obtain characters.
+- [x] Set the list of characters into state.
+- [x] Render your characters to the DOM:
 
   1. Build a React component named 'Character' to render an individual character.
   1. Map over the list in state, and for each character render a Character to the page.
@@ -69,16 +69,28 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to the main branch.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
-- [ ] Any changes pushed after the deadline will not receive any feedback.
+- [x] Submit via Codegrade by committing and pushing any new changes to the main branch.
+- [x] Check Codegrade for automated feedback.
+- [x] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
+- [x] Any changes pushed after the deadline will not receive any feedback.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+  <!--  
+    Building custom components and adding them to the DOM is a complex activity. It requires quite a bit of time an code to build responsive website.  React simplifies a lot of the work by abstracting away the hard work associated to selecting, adding, and manipulating DOM elements.  React gives user a virtual DOM and an extension of the vanilla JS language called JSX.  With it, we are able to build elements within our JS files and pass slices of state between components as needed.  React will also monitor and update only the elements it needs when a change in state is detected (as opposed to the entire DOM).
+  -->
 1. Describe component state.
+  <!--  
+    Components can be stateful or stateless. A stateful component is one which use a slice of state.  State meaning data that can be changed depending on a users interaction with it directly or through a child component.  A change in state triggers Reacts reconciliation process. A stateless component is simply a component that does not hold state.  State should never be updated directly and instead, set functions should be used.
+  -->
 1. Describe props.
+  <!--  
+    Props objects are used to pass state held inside one component, to another.  
+  -->
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+  <!--  
+    Side effects are ways of performing actions after a functions return has completed. We used useEffect during this weeks builds.  All side effects are run once, after the initial loading of the DOM, however subsequent runs can be set to occur only after certain state changes (achieved by using the second parameter in useEffect).
+  -->

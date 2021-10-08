@@ -5,29 +5,6 @@ import Character from './components/Character.js';
 import { PEOPLE_URL } from './constants';
 import styled from 'styled-components';
 
-// STEPS
-// -----------------------------------------------------
-// (1) Import Character (singular) from Components XXX
-// (2A) Import useState & useEffect XXX
-// (2B) Import Axios to make get call XXX
-// (2C) Make a 'constants' folder + file for API key  XXX
-// (2D) Import constants API URL from 'constants' XXX
-
-// (6A) Add ThemeProvider to index.js xxx
-// (6B) Create theme folder & index.js for styles xxx
-// (6C) Import styled-components where needed xxx
-
-// Create states (how many???) XXX
-// Make API call and console.log XXX
-// Wrap API call in useEffect (to run on initial for now, eventually character ID) XXX
-
-// Create custom style
-// Replace existing JSX with call to <Characters/>
-// Wrap call to <Characters> with Customer Styles tag
-
-// Create character.js file
-// -----------------------------------------------------
-
 const StyleApp = styled.div`
   // COME BACK LATER
 `
@@ -65,7 +42,10 @@ const App = () => {
 
 export default App;
 
-/*
+/* STRETCH 
+  // ORIGINALLY WAS GOING TO ADD A BUTTON,
+  // WILL WORK ON LATER
+
   function openDetails (name, charUrl) {
     console.log('OPEN DETAILS: ', name);
     setCharId(charUrl);
