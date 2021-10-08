@@ -8,10 +8,9 @@ const StyledList = styled.div`
   flex-direction: column;
   width: 60%;
   padding: 10px;
-  /* border: 2px black solid; // <<<<<<<<<<<<< */
-  border-radius: 10px;
-
-  /* background-color: ${props => props.theme.divBgColor}; */
+  // border: 2px black solid; // <<<<<<<<<<<<<
+  // border-radius: 10px;
+  // background-color: ${props => props.theme.divBgColor};
 
   .container {
     display: flex;
@@ -29,7 +28,7 @@ const StyledList = styled.div`
   }
 
   h2 {
-    border: 1px green solid;  // <<<<<<<<<<<<<
+    //border: 1px green solid;  // <<<<<<<<<<<<<
     color: ${props => props.theme.secondaryColor};
   }
  
