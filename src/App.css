@@ -3,19 +3,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border: 2px blue solid;
+  width: 90%;
+  margin: auto; */
 
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
 }
-.characterList {
+
+/* write your parent styles in here for your App.js */
+/* .characterList {
   width: 60%;
   display: flex;
   justify-content: space-between;
   margin: 4px 0 4px 0;
-  border: 1px black solid;
+  border: 1px red solid;
   padding: 10px;
   background-color: gray;
-}
-/* write your parent styles in here for your App.js */
+} */

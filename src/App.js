@@ -5,17 +5,21 @@ import Character from './components/Character.js';
 import { PEOPLE_URL } from './constants';
 import styled from 'styled-components';
 
+// STEPS
 // -----------------------------------------------------
-// (1) Import useState & useEffect XXX
-// (2) Import Axios to make get call XXX
-// (3) Import Character (singular) from Components XXX
-// (4) Make a 'constants' folder + file for API key  XXX
-// (5) Import constants URL from 'constants' XXX
-// (6) Import styled elements
+// (1) Import Character (singular) from Components XXX
+// (2A) Import useState & useEffect XXX
+// (2B) Import Axios to make get call XXX
+// (2C) Make a 'constants' folder + file for API key  XXX
+// (2D) Import constants API URL from 'constants' XXX
 
-// Create states (how many???)
-// Make API call and console.log
-// Wrap API call in useEffect (to run on initial for now, eventually character ID)
+// (6A) Add ThemeProvider to index.js xxx
+// (6B) Create theme folder & index.js for styles xxx
+// (6C) Import styled-components where needed xxx
+
+// Create states (how many???) XXX
+// Make API call and console.log XXX
+// Wrap API call in useEffect (to run on initial for now, eventually character ID) XXX
 
 // Create custom style
 // Replace existing JSX with call to <Characters/>
@@ -24,7 +28,7 @@ import styled from 'styled-components';
 // Create character.js file
 // -----------------------------------------------------
 
-const StyleChar = styled.div`
+const StyleApp = styled.div`
   // COME BACK LATER
 `
 
@@ -32,14 +36,8 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   const [characters, setCharacters] = useState([]);
-  const [charId, setCharId] = useState([null]);
+  const [charId, setCharId] = useState(null);
 
-  function openDetails (id) {
-    setCharId = id;
-  }
-  function closeDetails (id) {
-    setCharId = null;
-  }
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -47,7 +45,6 @@ const App = () => {
   useEffect ( () => {
     axios.get(PEOPLE_URL)
       .then ( response => {
-        console.log('RESPONSE: ', response.data);
         setCharacters(response.data);
       })
       .catch ( error => {
@@ -55,28 +52,45 @@ const App = () => {
       })
   }, [])
 
+
   if (characters.length === 0) return <h3>Loading...</h3>;
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {console.log('IN RETURN: ', characters)}
+      <Character characters={characters}/>
+    </div>
+  );
+}
+
+export default App;
+
+/*
+  function openDetails (name, charUrl) {
+    console.log('OPEN DETAILS: ', name);
+    setCharId(charUrl);
+  }
+  function closeDetails () {
+    setCharId(null);
+  }
+  ------------------
+  return (
+    <div className="App">
+      <h1 className="Header">Characters</h1>
       {
         characters.map(char => {
           return (
-            <div className='characterList'>
-              <h3>{char.name}</h3>
-              <button onClick={ () => openDetails(char.id)}>Use the Force</button>
-            </div>
+              <div className='characterList'>
+                <h3>{char.name}</h3>
+                <button onClick={ () => openDetails(char.name, char.url)}>Use the Force</button>
+              </div>
           )
         })
       }
       { 
         charId && <Character charId={charId} closeDetails={closeDetails} />
       }
-
+      
     </div>
   );
-}
-
-export default App;
+  */
