@@ -29,7 +29,6 @@ const App = () => {
       })
   }, [])
 
-
   if (characters.length === 0) return <h3>Loading...</h3>;
 
   return (

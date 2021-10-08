@@ -32,10 +32,7 @@ const StyledList = styled.div`
     color: ${props => props.theme.secondaryColor};
   }
  
-
-
 `
-
 
 function Character(props){
     const characters = props.characters;
@@ -45,7 +42,7 @@ function Character(props){
         <StyledList> 
             {characters.map(char => {
                 return (
-                    <div className='container'>
+                    <div className='container' key={char.url}>
                         <h2>{char.name}</h2>
                         <h2>{char.birth_year}</h2>
                     </div>
