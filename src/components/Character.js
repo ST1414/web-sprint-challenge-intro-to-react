@@ -36,7 +36,6 @@ const StyledList = styled.div`
 
 function Character(props){
     const characters = props.characters;
-    console.log('Character.JS: ', characters);
     
     return (
         <StyledList> 
